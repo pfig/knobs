@@ -27,9 +27,10 @@ def create_animation(knob_image: Image.Image, nframes: int, start_angle: int) ->
     knob_width, knob_height = knob_image.size
     strip = create_knob_strip(knob_width, knob_height, nframes)
 
-    angle_range = 360 - (start_angle - 180) * 2
+    knob_travel = 360 - (270 - start_angle) * 2
+    knob_step = knob_travel / (nframes - 1)
     for f in range(nframes):
-        angle = -f * (angle_range / (nframes - 1))
+        angle = -f * knob_step
         rotated_knob = knob_image.rotate(angle, expand=False)
         strip.paste(rotated_knob, (0, f * knob_height))
 
