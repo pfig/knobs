@@ -1,0 +1,76 @@
+[project]
+name = "knobs"
+description = "Generate a rotating knob image strip."
+keywords = ["knob", "image", "strip", "vst", "plugin", "audiounit",]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+]
+
+authors = [{name = "Pedro Figueiredo", email = "pfig@users.noreply.github.com"}]
+license = {text = "MIT"}
+
+requires-python = ">=3.10"
+dynamic = ["version"]
+readme = "README.md"
+
+dependencies = [
+    "pillow==11.2.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "bump-my-version",
+    "flake8",
+    "pytest",
+    "pytest-cov",
+    "pytest-mock",
+]
+
+[project.urls]
+Repository = "https://github.com/pfig/knobs"
+Issues = "https://github.com/pfig/knobs/issues"
+
+[build-system]
+requires = ["setuptools >= 80.9.0",]
+build-backend = "setuptools.build_meta"
+
+[tool.bumpversion]
+current_version = "0.0.1"
+commit = true
+tag = true
+[[tool.bumpversion.files]]
+filename = "knobs/__init__.py"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[project.scripts]
+knob = "knobs:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "knobs.__version__"}
+
+[tool.black]
+line-length = 99
+
+[tool.flake8]
+max-line-length = 99
+exclude = ".git,__pycache__,.pytest_cache,.venv,dist,build,*.egg-info"
+
+[tool.flake8.format]
+format = "default"
