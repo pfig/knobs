@@ -15,7 +15,7 @@ to this image, and the engine will scrub through the animation as the parameter
 value changes, making it look like the knob is turning.
 
 After struggling with GIMP and Script-Fu for a bit, I decided to do this in
-Python. I found a post by Thomas Faltenbach describing this exact problem,
+Python. I found a [post by Thomas Faltenbach describing this exact problem][0],
 along with some code, which I promptly ~~stole~~adapted. I believe I have
 simplified a few things in the process.
 
@@ -29,7 +29,8 @@ If you want to look at the code, this is roughly what's happening:
 As you can see, the red knob needs to travel 270° between its minimum and
 maximum positions, while the blue knob will need to travel 315°. If we want
 to accomplish this with 10 images, we need to rotate each image by 30° each
-time for the red knob, and 35° for the blue one.
+time for the red knob, and 35° for the blue one. **The starting angle is
+measured from 0° to the pointer's minimum position.**
 
 I put together two very crude knobs showing what this looks like in action.
 This is what both knobs look like when resting at _zero_:
