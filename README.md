@@ -42,6 +42,14 @@ These are the resulting animations:
 ![](imgs/knob-225-strip.png) ![](imgs/knob-255-strip.png)
 
 
+## Examples
+
+There is a base image under [`imgs`](imgs/knob-base.png), and a knob with
+a [ridged pointer](imgs/knob-ridged-245.png) built from it - with its
+corresponding [animation strip](imgs/knob-ridged-245-strip.png) and original
+[GIMP][1] sources.
+
+
 ## Installation
 
 ### Using `pip`
@@ -135,3 +143,4 @@ Run `deactivate` when you are done making changes and testing.
 
 
 [0]: https://medium.com/@thomas_99791/how-to-create-rotating-knob-stripes-for-audio-plugins-such-as-vst3-au-65b1dc6701a2 "Thomas Faltenbach's post"
+[1]: https://www.gimp.org "GNU Image Manipulation Program"
