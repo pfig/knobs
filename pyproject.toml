@@ -27,7 +27,7 @@ dynamic = ["version"]
 readme = "README.md"
 
 dependencies = [
-    "pillow==11.2.1",
+    "pillow==11.3.0",
 ]
 
 [project.optional-dependencies]
